@@ -1,0 +1,373 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% if conca %}
+    <div class="home-content">
+        <p>hola</p>
+    </div>
+{% else %}
+    <main>
+        <div class="mcourses-principal">
+            <div class="mcourses-title-Principal">
+                <div class="mcourses-title">
+                    <h1 class="title-Courses">Curso Intermedio Photoshop</h1>
+                    <h4 class="subtitle-Courses"> Aqui aprenderás edición fotografica para productos en las Redes Sociales</h4>
+                </div>
+            </div>
+            <div class="mcourses-stats">
+                <div>
+                    <div>
+                        <p>  Más vendido  </p>
+                    </div>
+                </div>
+                <div>
+                    <p><i class="fas fa-star mx-2"></i>4.5</p>
+                </div>
+                <div>
+                    <p><i class="fas fa-users mx-2"></i>400 Estudiantes</p>
+                </div>
+            </div>
+            <div class="mcourses-Teacher">
+                <a class="" href="" target="_blank" rel="noreferrer noopener" style="text-decoration:none">
+                    <div class="mcourses-Teacher-img">
+                        <img src="{% static 'images/teacher/luisdavid.png' %}" alt="teacher" class="course-img-2">
+                    </div>
+                    <div class="mcourses-Teacher-info">
+                        <h3 class="title-Teacher">Luis David Torrealba</h3>
+                        <p class="text-Teacher">Desarrollador Web y Diseñador Gráfico</p>
+                    </div>
+                </a>
+            </div>
+                <div class="mcourses-principal-info-description">
+                    <ul class="description-courses">
+                        <li class="info01">
+                            <div class="title-descrip-courses">
+                                <h2 class="title-Descrip">Curso Intermedio</h2>
+                            </div>
+                            <p class="cotent-Descrip">Este curso es de nivel intermedio, necesitarás conocer los fundamentos técnicos base de la fotografía y contar con un manejo intuitivo de Photoshop.</p>
+                        </li>
+                        <li class="info02">
+                            <div class="title-descrip-courses">
+                                <h2 class="title-Descrip">Certificate</h2>
+                            </div>
+                            <p class="cotent-Descrip">Este curso es de nivel intermedio, necesitarás conocer los fundamentos técnicos base de la fotografía y contar con un manejo intuitivo de Photoshop.</p>
+                        </li>
+                        <li class="info03">
+                            <div class="title-descrip-courses">
+                                <h2 class="title-Descrip">5 Clases rapidas</h2>
+                            </div>
+                            <p class="cotent-Descrip">Este curso es de nivel intermedio, necesitarás conocer los fundamentos técnicos base de la fotografía y contar con un manejo intuitivo de Photoshop.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mcourses-price">
+                    <div class="mcourses-price-descrip">
+                        <p class="">
+                            <span class="text-regular-price">US$</span>
+                            <span class="text-large-price">12,99</span>
+                            <span class="text-price">Antes: US$ 59,99</span>
+                            <span class="text-large-price">78% descuento.</span>
+                        </p>
+                    </div>
+                    <div class="mcourses-price-ofert">
+                        <p class="text-normal-price">¡La oferta termina en<!-- --> <!-- -->02 horas<!-- -->!</p>
+                    </div>
+                </div>
+                <div class="mcourses-btn">
+                    <div class="" style="margin-left: 0;">
+                        <a  class="w-10  border border-2 border-white btn-dark-1 py-3 link--decoration-none" href="">
+                             <span>Cómpralo ahora</span>
+                        </a>
+                        <a  class="w-10 border border-2 border-white btn-dark-1 py-3 link--decoration-none" href="">
+                            <span>Agregar a mi carrito</span>
+                       </a>
+                    </div>
+                </div>
+        </div>
+    </main>
+
+    <section class="descrip-course">
+        <h2 class="font-h4 text-base-main mb-16 sm:mb-24">Acerca del curso</h2>
+        <p class="font-body2 text-base-main">Con este curso online, descubrirás el potencial de la moda
+             y el lifestyle en tu estilo fotográfico a través de dos tipos de sesiones esenciales para todo 
+             fotógrafo: un shooting con una influencer y otro, con marcas.</p>
+    </section>
+
+    <section class="temario-course">
+        <div>
+            <h2 class="title-tema">¿Qué voy a aprender?</h2>
+        </div>
+        <div class="Content-offered">
+            <ul>
+                <li class="mb-24">
+                    <div class="content-section">
+                        <h3 class="title-temario">Temario 1</h3>
+                        <ul>
+                            <li class="mb-1 sm:mb-4">
+                                <button type="button" class="w-full cc items-center text-left">
+                                    <h4 class="temario-content">1. Tema 01</h4>
+                                </button>
+                            </li>
+                            <li class="mb-1 sm:mb-4">
+                                <button type="button" class="w-full cc items-center text-left">
+                                    <h4 class="temario-content">2. Tema 02</h4>
+                                </button>
+                            </li>
+                            <li class="mb-1 sm:mb-4">
+                                <button type="button" class="w-full cc items-center text-left">
+                                    <h4 class="temario-content">3. Tema 03</h4>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <ul class="collapse" id="Content-offered-Panel">
+                <li class="mb-24">
+                    <div class="content-section">
+                        <h3 class="title-temario">Temario 2</h3>
+                        <ul>
+                            <li class="mb-1 sm:mb-4">
+                                <button type="button" class="w-full cc cursor-pointer flex items-center text-left focus:outline-none">
+                                    <h4 class="temario-content">4.Tema 04</h4>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="w-full cc cursor-pointer flex items-center text-left focus:outline-none">
+                                    <h4 class="temario-content">5. Tema 05</h4>
+                                </button>
+                            </li>
+                            <li class="mb-1 sm:mb-4">
+                                <button type="button" class="w-full cc cursor-pointer flex items-center text-left focus:outline-none">
+                                    <h4 class="temario-content">6. Tema 06</h4>
+                                </button>
+                            </li>
+                            <li class="mb-1 sm:mb-4">
+                                <button type="button" class="w-full cc cursor-pointer flex items-center text-left focus:outline-none">
+                                    <h4 class="temario-content">7. Tema 07</h4>
+                                </button>
+                            </li>
+                            <li class="mb-1 sm:mb-4">
+                                <button type="button" class="w-full cc cursor-pointer flex items-center text-left focus:outline-none">
+                                    <h4 class="temario-content">8. Tema 08</h4>
+                                </button>
+                            </li>
+                            <li class="mb-1 sm:mb-4">
+                                <button type="button" class="w-full cc cursor-pointer flex items-center text-left focus:outline-none">
+                                    <h4 class="temario-content">9. Tema 09</h4>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="mb-24">
+                    <div class="content-section">
+                        <h3 class="title-temario">Temario 2</h3>
+                        <ul>
+                            <li class="mb-1 sm:mb-4">
+                                <button type="button" class="w-full cc cursor-pointer flex items-center text-left focus:outline-none">
+                                    <h4 class="temario-content">10.Tema 10</h4>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="w-full cc cursor-pointer flex items-center text-left focus:outline-none">
+                                    <h4 class="temario-content">11. Tema 11</h4>
+                                </button>
+                            </li>
+                            <li class="mb-1 sm:mb-4">
+                                <button type="button" class="w-full cc cursor-pointer flex items-center text-left focus:outline-none">
+                                    <h4 class="temario-content">12. Tema 12</h4>
+                                </button>
+                            </li>
+                            <li class="mb-1 sm:mb-4">
+                                <button type="button" class="w-full cc cursor-pointer flex items-center text-left focus:outline-none">
+                                    <h4 class="temario-content">13. Tema 13</h4>
+                                </button>
+                            </li>
+                            <li class="mb-1 sm:mb-4">
+                                <button type="button" class="w-full cc cursor-pointer flex items-center text-left focus:outline-none">
+                                    <h4 class="temario-content">14. Tema 14</h4>
+                                </button>
+                            </li>
+                            <li class="mb-1 sm:mb-4">
+                                <button type="button" class="w-full cc cursor-pointer flex items-center text-left focus:outline-none">
+                                    <h4 class="temario-content">15. Tema 15</h4>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="mb-24">
+                    <div class="content-section">
+                        <h3 class="title-temario">Temario 2</h3>
+                        <ul>
+                            <li class="mb-1 sm:mb-4">
+                                <button type="button" class="w-full cc cursor-pointer flex items-center text-left focus:outline-none">
+                                    <h4 class="temario-content">16.Tema 16</h4>
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="w-full cc cursor-pointer flex items-center text-left focus:outline-none">
+                                    <h4 class="temario-content">17. Tema 05</h4>
+                                </button>
+                            </li>
+                            <li class="mb-1 sm:mb-4">
+                                <button type="button" class="w-full cc cursor-pointer flex items-center text-left focus:outline-none">
+                                    <h4 class="temario-content">18. Tema 18</h4>
+                                </button>
+                            </li>
+                            <li class="mb-1 sm:mb-4">
+                                <button type="button" class="w-full cc cursor-pointer flex items-center text-left focus:outline-none">
+                                    <h4 class="temario-content">19. Tema 19</h4>
+                                </button>
+                            </li>
+                            <li class="mb-1 sm:mb-4">
+                                <button type="button" class="w-full cc cursor-pointer flex items-center text-left focus:outline-none">
+                                    <h4 class="temario-content">20. Tema 20</h4>
+                                </button>
+                            </li>
+                            <li class="mb-1 sm:mb-4">
+                                <button type="button" class="w-full cc cursor-pointer flex items-center text-left focus:outline-none">
+                                    <h4 class="temario-content">21. Tema 21</h4>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <button class="cc btn-active-2" role="button" data-toggle="collapse" data-target="#Content-offered-Panel"  id="react-collapsed-toggle-1" aria-controls="Content-offered-Panel" aria-expanded="false" tabindex="0">Mostrar todo el Contenido
+                <svg class="fill-current ml-8 flex-shrink-0" version="1.1" xmlns="http://www.w3.org/2000/svg" width="10.9375" height="7" viewBox="0 0 50 32">
+                    <path d="M1.9 2v0c2.65-2.65 6.85-2.65 9.6 0l13.5 13.45 13.45-13.45c2.65-2.65 6.9-2.65 9.65 0v0c2.65 2.65 2.65 6.9 0 9.65l-18.2 18.3c-1.4 1.35-3.050 2.050-4.9 2.050-1.7 0-3.55-0.7-4.85-2.050l-18.25-18.15c-2.55-2.75-2.55-7.15 0-9.8z"></path>
+                </svg>
+            </button>
+        </div>
+    </section>
+    <section class="comment box">
+        <div class="title-box-coment">
+            <h4 class="title-temario">Comentarios</h4>
+        </div>
+        <ul class="list-coment">
+            <li class="list-coment-user" style="border-bottom: 1px solid rgb(223, 225, 230);">
+                <div class="info-user">
+                    <div class="imagen-user">
+                        <img src="{% static 'images/teacher/luisdavid.png' %}" alt="" class="img-user">
+                    </div>
+                    <div class="calification">
+                        <p class="title-Teacher">Nombre de Usuario</p>
+                        <ul class="list-group list-group-horizontal">
+                            <li class="flex items-center">
+                                <i class="fas fa-star mx-1"></i>
+                            </li>
+                            <li class="flex items-center" style="padding: 0.2px;">
+                                <i class="fas fa-star mx-1"></i>
+                            </li>
+                            <li class="flex items-center" style="padding: 0.2px;">
+                                <i class="fas fa-star mx-1"></i>
+                            </li>
+                            <li class="flex items-center" style="padding: 0.2px;">
+                                <i class="fas fa-star mx-1"></i>
+                            </li>
+                            <li class="flex items-center" style="padding: 0.2px;">
+                                <i class="fas fa-star mx-1"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        <span>Estaría muy bien que agregaran más detalles e información para principiantes, consejos, etc. Pero el curso es muy bueno, me encanta.</span>
+                     </p>
+                </div>
+            </li>
+        </ul>
+        <ul class="list-coment collapse" id="coment-Panel">
+            <li class="list-coment-user" style="border-bottom: 1px solid rgb(223, 225, 230);">
+                <div class="info-user">
+                    <div class="imagen-user">
+                        <img src="{% static 'images/teacher/luisdavid.png' %}" alt="" class="img-user">
+                    </div>
+                    <div class="calification">
+                        <p class="title-Teacher">Nombre de Usuario</p>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        <span>Estaría muy bien que agregaran más detalles e información para principiantes, consejos, etc. Pero el curso es muy bueno, me encanta.</span>
+                     </p>
+                </div>
+            </li>
+            <li class="list-coment-user" style="border-bottom: 1px solid rgb(223, 225, 230);">
+                <div class="info-user">
+                    <div class="imagen-user">
+                        <img src="{% static 'images/teacher/luisdavid.png' %}" alt="" class="img-user">
+                    </div>
+                    <div class="calification">
+                        <p class="title-Teacher">Nombre de Usuario</p>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        <span>Estaría muy bien que agregaran más detalles e información para principiantes, consejos, etc. Pero el curso es muy bueno, me encanta.</span>
+                     </p>
+                </div>
+            </li>
+            <li class="list-coment-user" style="border-bottom: 1px solid rgb(223, 225, 230);">
+                <div class="info-user">
+                    <div class="imagen-user">
+                        <img src="{% static 'images/teacher/luisdavid.png' %}" alt="" class="img-user">
+                    </div>
+                    <div class="calification">
+                        <p class="title-Teacher">Nombre de Usuario</p>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        <span>Estaría muy bien que agregaran más detalles e información para principiantes, consejos, etc. Pero el curso es muy bueno, me encanta.</span>
+                     </p>
+                </div>
+            </li>
+            <li class="list-coment-user" style="border-bottom: 1px solid rgb(223, 225, 230);">
+                <div class="info-user">
+                    <div class="imagen-user">
+                        <img src="{% static 'images/teacher/luisdavid.png' %}" alt="" class="img-user">
+                    </div>
+                    <div class="calification">
+                        <p class="title-Teacher">Nombre de Usuario</p>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        <span>Estaría muy bien que agregaran más detalles e información para principiantes, consejos, etc. Pero el curso es muy bueno, me encanta.</span>
+                     </p>
+                </div>
+            </li>
+            <li class="list-coment-user" style="border-bottom: 1px solid rgb(223, 225, 230);">
+                <div class="info-user">
+                    <div class="imagen-user">
+                        <img src="{% static 'images/teacher/luisdavid.png' %}" alt="" class="img-user">
+                    </div>
+                    <div class="calification">
+                        <p class="title-Teacher">Nombre de Usuario</p>
+                    </div>
+                </div>
+                <div>
+                    <p>
+                        <span>Estaría muy bien que agregaran más detalles e información para principiantes, consejos, etc. Pero el curso es muy bueno, me encanta.</span>
+                     </p>
+                </div>
+            </li>
+        </ul>
+        <button class="cc2 btn-active" role="button" data-toggle="collapse" data-target="#coment-Panel" aria-controls="coment-Panel" aria-expanded="false" tabindex="0">
+            Mostrar más comentarios
+        </button>
+    </section>
+
+    <section class="recommended-courses">
+        {% block content2 %}
+        {% endblock %}
+    </section>
+
+{% endif %}
+{% endblock content %}
