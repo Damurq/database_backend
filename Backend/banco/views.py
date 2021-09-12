@@ -4,4 +4,4 @@ from django.shortcuts import redirect, render
 
 
 def HomeUser(request):
-    return render(request, 'HomeUser.html')
+    return render(request, 'pages/homeUser.html')

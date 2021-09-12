@@ -1,12 +1,17 @@
 from django.db import models
-from django.db.models.deletion import CASCADE
+from django.contrib.auth.models import User
 
 class Client(models.Model):
+    """
+    Client.
+
+    """
     DOCUMENT_TYPE = (
         ("V","Venezolano"),
         ("E","Extranjero")
     )
     document_id = models.AutoField(primary_key=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     document_type = models.CharField(max_length=1,choices=DOCUMENT_TYPE)                                  # Faltan opciones
     document_number = models.PositiveIntegerField()                    
     first_name = models.CharField(max_length=255)
