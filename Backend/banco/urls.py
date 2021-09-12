@@ -23,4 +23,5 @@ urlpatterns = [
     path('HomeUser/SolicitarCita/', MessageSC, name = 'MessageSC'),
     path('HomeUser/SolicitarCita/12', ClientDataSC, name = 'ClientDataSC'),
     path('HomeUser/SolicitarCita/12/32', Form1SC, name = 'Form1SC'),
+    path('HomeUser/SolicitarCita/12/32/27', Form2SC, name = 'Form2SC'),
 ]

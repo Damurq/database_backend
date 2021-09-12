@@ -15,6 +15,10 @@ def ClientDataSC(request):
 def Form1SC(request):
     return render(request, 'components/Form1SC.html')
 
+def Form2SC(request):
+    return render(request, 'components/Form2SC.html')
+
+
 
 
 

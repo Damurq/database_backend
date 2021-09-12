@@ -41,7 +41,7 @@
 .text-paragraph{
   font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;
-  margin-bottom: 0.1rem
+  margin-bottom: 0rem
 }
 
 .text-Ttle-bold{
@@ -71,4 +71,29 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 /*Form1SC*/
+
+
+
+
+
+/*Form2SC*/
+.uso-cuenta{
+  margin-top: 1.4rem;
+}
+.card-Principal-Form{
+  margin-top: 1.5rem;
+
+}
