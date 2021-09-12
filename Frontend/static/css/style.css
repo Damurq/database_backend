@@ -1,0 +1,46 @@
+.menu-principal{
+  margin-top: 2rem;
+}
+.navbar-Principal{
+  margin-top: 2rem;
+  background-color: #21516e;
+  color: #ffff;
+}
+
+.style-1 {
+  background-color: #056DAE;
+  color: #ffff;
+}
+.style-2 {
+  background-color: #21516e;
+  color: #ffff;
+  transition: background 0.2s;
+}
+
+/*Links */
+.link-desconexion{
+  background: #b30c4c;
+  padding: 1px 1px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.link--decoration-none {
+  color: #ffff;
+  text-decoration: none;
+}
+
+.btn-dark-1 {
+  background: #056DAE;
+  padding: 5px 25px;
+  color: #ffff;
+  transition: background 1.3s;
+}
+
+
+/*Texto*/
+.NavTop-Text1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
