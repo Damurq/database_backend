@@ -2,9 +2,13 @@ from django.db import models
 from django.db.models.deletion import CASCADE
 
 class Client(models.Model):
+    DOCUMENT_TYPE = (
+        ("V","Venezolano"),
+        ("E","Extranjero")
+    )
     document_id = models.AutoField(primary_key=True)
-    document_type = models.CharField(max_length=1)                                  # Faltan opciones
-    document_number = models.PositiveIntegerField(max_length=10)                    # Faltan opciones
+    document_type = models.CharField(max_length=1,choices=DOCUMENT_TYPE)                                  # Faltan opciones
+    document_number = models.PositiveIntegerField()                    
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     address = models.TextField(max_length=500)
@@ -18,9 +22,18 @@ class Client(models.Model):
         ]
 
 class ForeignTransfer(models.Model):
+    COUNTRIES = (
+        ("Ven", "Venezuela"),
+        ("Col", "Colombia"),
+        ("Per", "Peru"),
+        ("Chi", "Chile"),
+        ("Bra", "Brasil"),
+        ("Arg", "Argentina"),
+        ("Ecu", "Ecuador")
+    )
     transfer_abroad = models.CharField(max_length=1)
-    origin = models.CharField(max_length=1, blank=True, null=True)
-    destiny = models.CharField(max_length=1, blank=True, null=True)
+    origin = models.CharField(max_length=3, blank=True, null=True, choices=COUNTRIES)
+    destiny = models.CharField(max_length=3, blank=True, null=True, choices=COUNTRIES)
     def __str__(self):
         return self.name
     class Meta:  
@@ -54,17 +67,57 @@ class Office(models.Model):
         db_table = 'Office'
 
 class Request(models.Model):
-    code = models.AutoField(primery_key=True)
+    ACCOUNT_TYPE = (
+        ("CA", "Cuenta de ahorro"),
+        ("CC", "Cuenta corriente")
+    )
+    REASON = (
+        ("BS", "Buen servicio y variedad de productos"),
+        ("CT", "Cliente tradicional"),
+        ("CN", "Cuenta Nomina"),
+        ("GFB", "Gestion de Funcionario del banco"),
+        ("NN", "Por estar a nivel nacional"),
+        ("SPS", "Por la solidez / prestigio / seguridad"),
+        ("AI", "Por los altos intereses"),
+        ("PRE", "Por los premios"),
+        ("PUB", "Publicidad"),
+        ("RFA", "Referencia de un familiar / amigo")
+    )
+    ACCOUNT_USAGE = (
+        ("APE", "Ahorro personal"),
+        ("AGVP", "Atender gastos varios / personales"),
+        ("CCC", "Cancelar cuotas de credito"),
+        ("DV", "Deposito de las ventas"),
+        ("MFNPF", "Movilizar fondos de nomina / pension / fideicomiso"),
+        ("PP", "Pago de proveedores"),
+        ("P", "Particular"),
+        ("RDA", "Recibir deposito de alquileres"),
+        ("RIDP", "Recibir intereses de depositos a plazo")
+    )
+    ESTIMATED_AMOUNT_MOBILIZATION = (
+        ("En0y500", "Entre 0 y 500"),
+        ("En100001y100000", "Entre 10.001 y 100.000"),
+        ("En2501y10000", "Entre 2.501 y 10.000"),
+        ("En501y2500", "Entre 501 y 2.500"),
+        ("Ma100001", "Mas de 100.001")
+    )
+    AVERAGE_MONTHLY_TRANSACTION = (
+        ("Ma100", "Mayor que 100"),
+        ("Me20", "Menor que 20"),
+        ("Ma20Me50", "Mayor que 20 y menor que 50"),
+        ("Ma51Me100", "Mayor que 51 y menor que 100")
+    )
+    code = models.AutoField(primary_key=True)
     client_document_id = models.ForeignKey(Client, on_delete=models.CASCADE)
     office_code = models.ForeignKey(Office, on_delete=models.CASCADE)
     foreign_transfer_code = models.ForeignKey(Office, on_delete=models.PROTECT)
-    account_type = models.CharField(max_length=1)                                   # Faltan opciones
-    reason = models.CharField(max_length=1)                                         # Faltan opciones
+    account_type = models.CharField(max_length=2, choices=ACCOUNT_TYPE)                                  
+    reason = models.CharField(max_length=3,choices=REASON)                                        
     expiration_date = models.DateField(auto_now =False, auto_now_add=False)
     date_issue = models.DateField(auto_now =False, auto_now_add=True)
-    account_usage = models.CharField(max_length=1)
-    estimated_amount_mobilization = models.CharField(max_length=1)                  # Faltan opciones
-    average_monthly_transaction = models.CharField(max_length=1)                    # Faltan opciones
+    account_usage = models.CharField(max_length=5, choices=ACCOUNT_USAGE)
+    estimated_amount_mobilization = models.CharField(max_length=15, choices=ESTIMATED_AMOUNT_MOBILIZATION)                  
+    average_monthly_transaction = models.CharField(max_length=9, choices=AVERAGE_MONTHLY_TRANSACTION)                    
     background_source = models.CharField(max_length=1)                              # Faltan opciones
     background_destination = models.CharField(max_length=1)                         # Faltan opciones
     state = models.CharField(max_length=1)                                          # Faltan opciones

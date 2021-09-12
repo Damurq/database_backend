@@ -42,5 +42,5 @@ class RequestForm(ModelForm):
     # specify the name of model to use
     class Meta:
         model = Request
-        fields = ['office_code', 'foreign_transfer_code', 'account_type', 'reason', 'expiration_date', 'date_issue', 'account_usage', 'estimated_amount_mobilization', 'average_monthly_transaction',
+        fields = ['office_code', 'foreign_transfer_code', 'account_type', 'reason', 'expiration_date', 'account_usage', 'estimated_amount_mobilization', 'average_monthly_transaction',
                   'background_source', 'background_destination']
