@@ -12,6 +12,9 @@ def MessageSC(request):
 def ClientDataSC(request):
     return render(request, 'components/ClientDataSC.html')
 
+def Form1SC(request):
+    return render(request, 'components/Form1SC.html')
+
 
 
 

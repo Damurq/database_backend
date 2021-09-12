@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('HomeUser/', HomeUser, name = 'HomeUser'),
     path('HomeUser/SolicitarCita/', MessageSC, name = 'MessageSC'),
-    path('HomeUser/SolicitarCita/#', ClientDataSC, name = 'ClientDataSC'),
+    path('HomeUser/SolicitarCita/12', ClientDataSC, name = 'ClientDataSC'),
+    path('HomeUser/SolicitarCita/12/32', Form1SC, name = 'Form1SC'),
 ]
