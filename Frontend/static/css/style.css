@@ -1,3 +1,5 @@
+
+
 .menu-principal{
   margin-top: 2rem;
 }
@@ -16,6 +18,14 @@
   color: #ffff;
   transition: background 0.2s;
 }
+
+.link-desconexion{
+  background: #b30c4c;
+  padding: 1px 1px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
 
 /*Texto*/
 .NavTop-Text1 {
