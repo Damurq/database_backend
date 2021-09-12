@@ -38,17 +38,6 @@
 
 
 /*HomeUser*/
-.text-Main{
-  margin-top: 1.6rem;
-  margin-left: 2rem;
-}
-
-.card-Main{
-  margin-top: 2.2rem;
-  margin-right: 2.3rem;
-}
-
-
 .text-paragraph{
   font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;
@@ -63,6 +52,16 @@
 
 .card-facilidades{
   display: inline;
+}
+
+.text-Main{
+  margin-top: 1.6rem;
+  margin-left: 2.3rem;
+}
+
+.card-Main{
+  margin-top: 2.2rem;
+  margin-right: 2.3rem;
 }
 
 
