@@ -12,7 +12,7 @@ class Client(models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     address = models.TextField(max_length=500)
-    state = models.CharField(max_length=1)                                          # Faltan opciones
+    state = models.CharField(max_length=1, default='A')                                          # Faltan opciones
     def __str__(self):
         return self.document_id
     class Meta:  
@@ -41,7 +41,7 @@ class ForeignTransfer(models.Model):
 
 class State(models.Model):
     name = models.CharField(max_length=255, unique=True)
-    state = models.CharField(max_length=1)                                          # Faltan opciones
+    state = models.CharField(max_length=1, default='A')                                          # Faltan opciones
     def __str__(self):
         return self.name
     class Meta:  
@@ -50,7 +50,7 @@ class State(models.Model):
 class Municipality(models.Model):
     name = models.CharField(max_length=255, unique=True)
     state_code = models.ForeignKey(State, on_delete= models.CASCADE)
-    state = models.CharField(max_length=1)                                          # Faltan opciones
+    state = models.CharField(max_length=1, default='A')                                          # Faltan opciones
     def __str__(self):
         return self.name
     class Meta:  
@@ -60,7 +60,7 @@ class Office(models.Model):
     name = models.CharField(max_length=255, unique=True)
     municipality_code = models.ForeignKey(Municipality, on_delete= models.CASCADE)
     address = models.TextField(max_length=500)
-    state = models.CharField(max_length=1)                                          # Faltan opciones
+    state = models.CharField(max_length=1, default='A')                                          # Faltan opciones
     def __str__(self):
         return self.name
     class Meta:  
@@ -120,7 +120,7 @@ class Request(models.Model):
     average_monthly_transaction = models.CharField(max_length=9, choices=AVERAGE_MONTHLY_TRANSACTION)                    
     background_source = models.CharField(max_length=1)                              # Faltan opciones
     background_destination = models.CharField(max_length=1)                         # Faltan opciones
-    state = models.CharField(max_length=1)                                          # Faltan opciones
+    state = models.CharField(max_length=1, default='A')                                          # Faltan opciones
     def __str__(self):
         return self.code
     class Meta:  
