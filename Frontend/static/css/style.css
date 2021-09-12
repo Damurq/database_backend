@@ -17,30 +17,59 @@
   transition: background 0.2s;
 }
 
-/*Links */
-.link-desconexion{
-  background: #b30c4c;
-  padding: 1px 1px;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.link--decoration-none {
-  color: #ffff;
-  text-decoration: none;
-}
-
-.btn-dark-1 {
-  background: #056DAE;
-  padding: 5px 25px;
-  color: #ffff;
-  transition: background 1.3s;
-}
-
-
 /*Texto*/
 .NavTop-Text1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
   font-weight: bold;
 }
+
+
+/*Base*/
+.container-principal{
+  padding: 0%;
+
+}
+
+.sepmar{
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+
+/*HomeUser*/
+.text-Main{
+  margin-top: 1.6rem;
+  margin-left: 2rem;
+}
+
+.card-Main{
+  margin-top: 2.2rem;
+  margin-right: 2.3rem;
+}
+
+
+.text-paragraph{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 0.1rem
+}
+
+.text-Ttle-bold{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.card-facilidades{
+  display: inline;
+}
+
+
+
+
+
+
+
+
+/*Form1SC*/

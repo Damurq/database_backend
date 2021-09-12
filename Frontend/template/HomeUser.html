@@ -2,8 +2,53 @@
 {% load static %}
 {% block content %}
         <!-- Contenido -->
-        <div class="container" style="background-color: #F5F7FC; height: 550px;">
-            <h1 class="mt-4">Banner Principal</h1>
-            <p>Banner informativo del banco</p>
-        </div>  
+        <div class="container" style="background-color: #F5F7FC; height: 550px; padding:0;">
+            <div class="row">
+                <div class="">
+                    <img class="d-block w-100" src="{% static 'images/Banners/BannerPrincial- HomeUser-03.jpg' %}" alt="Banner">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 text-Main">
+                        <p class="text-paragraph">Todas las operaciones</p>
+                        <p class="text-Ttle-bold">en tu banco online</p>
+                </div>
+                <div class="col card-Main">
+                    <div class="row">
+                        <div class="col-xl-4 col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <a class="" aria-current="page" href="#">
+                                        <i class="fas fa-search"></i>
+                                    </a>
+                                    <p>Holis</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <a class="" aria-current="page" href="#">
+                                        <i class="fas fa-search"></i>
+                                    </a>
+                                    <p>Holis</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <a class="" aria-current="page" href="#">
+                                        <i class="fas fa-search"></i>
+                                    </a>
+                                    <p>Holis</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                    
+            </div>
+        </div> 
 {% endblock content %}
