@@ -115,7 +115,7 @@ class Request(models.Model):
     code = models.AutoField(primary_key=True)
     client_document_id = models.ForeignKey(Client, on_delete=models.CASCADE)
     office_code = models.ForeignKey(Office, on_delete=models.CASCADE)
-    foreign_transfer_code = models.ForeignKey(Office, on_delete=models.PROTECT)
+    foreign_transfer_code = models.ForeignKey(ForeignTransfer, on_delete=models.PROTECT)
     account_type = models.CharField(max_length=2, choices=ACCOUNT_TYPE)                                  
     reason = models.CharField(max_length=3,choices=REASON)                                        
     expiration_date = models.DateField(auto_now =False, auto_now_add=False)

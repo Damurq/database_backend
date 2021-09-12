@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import *
+from pre_cuentas import views as pre
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', login, name='login'),
     path('home_user/', homeUser),
+    path('h',pre.client_view),
 ]
