@@ -19,5 +19,7 @@ from .views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('HomeUser/', HomeUser),
+    path('HomeUser/', HomeUser, name = 'HomeUser'),
+    path('HomeUser/SolicitarCita/', MessageSC, name = 'MessageSC'),
+    path('HomeUser/SolicitarCita/#', ClientDataSC, name = 'ClientDataSC'),
 ]

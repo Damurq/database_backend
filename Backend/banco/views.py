@@ -5,3 +5,21 @@ from django.shortcuts import redirect, render
 
 def HomeUser(request):
     return render(request, 'HomeUser.html')
+
+def MessageSC(request):
+    return render(request, 'components/MessageSC.html')
+
+def ClientDataSC(request):
+    return render(request, 'components/ClientDataSC.html')
+
+
+
+
+
+
+
+
+
+
+
+
