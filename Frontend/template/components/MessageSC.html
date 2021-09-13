@@ -1,0 +1,37 @@
+{% extends "Base.html" %}
+{% load static %}
+{% block content %}
+    <!-- Contenido -->
+    <div class="container" style="background-color: #F5F7FC; height: 550px;">
+        <div id="">
+            <main>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-5">
+                            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                <div><h6 class="text-center font-weight-light my-4">¡Importante!</h6></div>
+                                <div class="card-body">
+                                    <div class="small mb-3 text-muted">
+                                        <p>
+                                        Estimado cliente, es importante verificar que
+                                        los datos introducidos en el siguiente formulario 
+                                        sean los correctos, para minimizar su tiempo de 
+                                        atención en nuestras oficinas. <br> <br>
+
+                                        Adicionalmente, le informamos que tiene un tiempo 
+                                        máximo de 30 minutos para llenar y enviar su solicitud.
+                                        </p>
+                                    </div>
+                                        <div class="d-flex align-items-center justify-content-center mt-4 mb-0">
+                                            <a class="btn btn-primary" href="{% url 'ClientDataSC' %}">Aceptar</a>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+{% endblock content %}
