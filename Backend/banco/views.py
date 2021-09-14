@@ -1,9 +1,14 @@
+from os import name
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 
+def SeeQuote(request):
+    return render(request, 'components/SeeQuote.html')
 
+def Visualize(request):
+    return render(request, 'components/Visualize.html')
 
 def login_view(request):
     """Login view."""
@@ -18,10 +23,9 @@ def login_view(request):
                 login(request, user)
                 return redirect('home_user')
             else:
-                return render(request, 'login.html', {'error': 'Invalid username and password'})
-
-    return render(request, 'login.html')
-
+                return render(request, 'pages/Login.html', {'error': 'Invalid username and password'})
+    return render(request, 'pages/Login.html')
+  
 @login_required
 def logout_view(request):
     """Logout a user."""

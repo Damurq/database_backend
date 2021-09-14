@@ -1,0 +1,64 @@
+{% extends "Base.html" %}
+{% load static %}
+{% block content %}
+            <!-- Contenido -->
+            <div class="container" style="background-color: #F5F7FC; height: 542px; text-align: center; margin:4px; border: solid 3px #056DAE">
+                <h1 style="align:center; margin:20px auto;">COMPROBANTE N*09005357</h1>
+                <div class="row1" style=" height:100px; margin:10px;">
+                    <table class="table" style="width:100%; text-align: center;">
+                        <thead>
+                            <tr class="row1-1" style="background: #dcdcdc; height:10px">
+                                <th style="font-size: small;" scope="col">Nombres y Apellidos</th>
+                                <th style="font-size: small;" scope="col">Tipo-Número de documento</th>
+                                <th style="font-size: small;" scope="col">Fecha del Comprobante</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="row1-2" style="height:30px">
+                                <td style="font-size: 0.9em;">MARIHEC ESTER MIRANDA TOVAR</td>
+                                <td style="font-size: 0.9em;">26.120.075</td>
+                                <td style="font-size: 0.9em;">13/09/2021</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <div>
+                <div class="row2" style="height:100px; padding-top:5px">
+                    <table class="table" style="width:100%; text-align: center;">
+                        <thead>
+                            <tr class="row2-1" style="background: #dcdcdc; height:30px">
+                                <th style="font-size: small;" scope="col">Tipo de cuenta</th>
+                                <th style="font-size: small;" scope="col">Oficina</th>
+                                <th style="font-size: small;" scope="col">Código de oficina</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="row2-2" style="height:30px">
+                                <td style="font-size: 0.9em;">CUENTA CORRIENTE</td>
+                                <td style="font-size: 0.9em;">LOS LEONES-Barquisimeto</td>
+                                <td style="font-size: 0.9em;">0315</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <div>
+                <div class="row3" style="height:100px;">
+                    <table class="table" style="width:100%; text-align: center;">
+                        <thead>
+                            <tr class="row3-1" style="background: #dcdcdc; height:30px">
+                                <th style="font-size: small;" scope="col">Dirección de la Oficina</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="row3-2" style="height:30px">
+                                <td style="font-size: 1em;">Av. Los Leones, CC Los Leones, PB, Locales 1, 2 y 3, sector Este, Municipio Iribarren. </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <div>
+                <div class="Footer-comp" style="height:80px; width: 90%; margin: 20px auto;">
+                    <h1 class="note" style="color:#056DAE; font-size: large;"><small>NOTA: Usted posee 15 días hábiles para formalizar su solicitud en la oficina bancaria señalada. 
+                                Recuerde consignar este comprobante junto a los recaudos al momento de abrir su cuenta</small><h1>
+                </div>
+                <button style="width:20%;" type="button" class="btn btn-outline-primary">Imprimir</button>
+            </div> 
+
+{% endblock content %}

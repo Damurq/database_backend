@@ -5,6 +5,17 @@ from .forms import *
 from .models import *
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth import authenticate, login
+  
+def client_view(request):
+    context ={}
+    # create object of form
+    form = ClientForm(request.POST)
+    # check if form data is valid
+    if form.is_valid():
+        # save the form data to model
+        form.save()
+    context['form']= form
+    return render(request, "pages/cliente.html", context)
 
 @login_required
 def homeUser(request):
@@ -42,7 +53,6 @@ def clientDataSC(request):
         }
     )
 
-
 #@login_required
 def form1SC(request):
 
@@ -51,4 +61,3 @@ def form1SC(request):
 #@login_required
 def form2SC(request):
     return render(request, 'components/Form2SC.html')
-

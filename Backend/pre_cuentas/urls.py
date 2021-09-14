@@ -4,9 +4,12 @@ from .views import *
 
 urlpatterns = [
     path('', homeUser, name = 'home_user'),
+    path('Login/', Login, name= 'Login'),
     path('solicitar_cita/', messageSC, name = 'MessageSC'),
     path('solicitar_cita/12', clientDataSC, name = 'ClientDataSC'),
     path('solicitar_cita/12/32', form1SC, name = 'Form1SC'),
     path('solicitar_cita/12/32/27', form2SC, name = 'Form2SC'),
+    path('HomeUser/VerCita/', SeeQuote, name='SeeQuote'),
+    path('HomeUser/Visualizar/', Visualize, name='Visualize'),
 ]
 
