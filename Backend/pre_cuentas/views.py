@@ -1,19 +1,14 @@
-from django.http import HttpResponse
-from django.shortcuts import redirect, render
-from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
 
-#@login_required
-def homeUser(request):
-    return render(request, 'HomeUser.html')
-
-def messageSC(request):
-    return render(request, 'components/MessageSC.html')
-
-def clientDataSC(request):
-    return render(request, 'components/ClientDataSC.html')
-
-def form1SC(request):
-    return render(request, 'components/Form1SC.html')
-
-def form2SC(request):
-    return render(request, 'components/Form2SC.html')
+from .forms import *
+  
+def client_view(request):
+    context ={}
+    # create object of form
+    form = ClientForm(request.POST)
+    # check if form data is valid
+    if form.is_valid():
+        # save the form data to model
+        form.save()
+    context['form']= form
+    return render(request, "pages/cliente.html", context)
