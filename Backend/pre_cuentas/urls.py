@@ -9,3 +9,4 @@ urlpatterns = [
     path('solicitar_cita/12/32', form1SC, name = 'Form1SC'),
     path('solicitar_cita/12/32/27', form2SC, name = 'Form2SC'),
 ]
+
