@@ -4,12 +4,6 @@ from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 
-def SeeQuote(request):
-    return render(request, 'components/SeeQuote.html')
-
-def Visualize(request):
-    return render(request, 'components/Visualize.html')
-
 def login_view(request):
     """Login view."""
     if request.user.is_authenticated:

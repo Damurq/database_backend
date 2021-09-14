@@ -61,3 +61,9 @@ def form1SC(request):
 #@login_required
 def form2SC(request):
     return render(request, 'components/Form2SC.html')
+
+def seeQuote(request):
+    return render(request, 'components/SeeQuote.html')
+
+def visualize(request):
+    return render(request, 'components/Visualize.html')
