@@ -4,6 +4,9 @@ from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 
+def landingPage(request):
+    return render(request, 'pages/LandingPage.html')
+
 def login_view(request):
     """Login view."""
     if request.user.is_authenticated:
