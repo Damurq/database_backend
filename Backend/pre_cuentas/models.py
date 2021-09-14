@@ -19,7 +19,7 @@ class Client(models.Model):
     address = models.TextField(max_length=500)
     state = models.CharField(max_length=1, default='A')                                          # Faltan opciones
     def __str__(self):
-        return self.document_id
+        return self.first_name + " "+ self.last_name
     class Meta:  
         db_table = 'Client'
         constraints = [

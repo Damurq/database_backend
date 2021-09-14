@@ -20,12 +20,7 @@ from pre_cuentas import views as pre
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('Login/', Login, name= 'Login'),
-    path('HomeUser/', HomeUser, name = 'HomeUser'),
-    path('HomeUser/SolicitarCita/', MessageSC, name = 'MessageSC'),
-    path('HomeUser/SolicitarCita/12', ClientDataSC, name = 'ClientDataSC'),
-    path('HomeUser/SolicitarCita/12/32', Form1SC, name = 'Form1SC'),
-    path('HomeUser/SolicitarCita/12/32/27', Form2SC, name = 'Form2SC'),
-    path('HomeUser/VerCita/', SeeQuote, name='SeeQuote'),
-    path('HomeUser/Visualizar/', Visualize, name='Visualize'),
+    path('home_user/', include('pre_cuentas.urls')),
+    path("login/",login,name="login"),
+    path("logout/",logout_view,name="logout"),
 ]

@@ -12,3 +12,4 @@ urlpatterns = [
     path('HomeUser/VerCita/', SeeQuote, name='SeeQuote'),
     path('HomeUser/Visualizar/', Visualize, name='Visualize'),
 ]
+

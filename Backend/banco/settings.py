@@ -40,15 +40,19 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-	# Aca irian apps externas como Django Rest Framework, Celery, django debug toolbar, etc
+	"crispy_forms",
+    "crispy_bootstrap5",
 ]
 
 LOCAL_APPS = [
     'pre_cuentas'
 ]
 
-
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
