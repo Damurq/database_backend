@@ -1,0 +1,448 @@
+/*Landing page*/
+
+/* --------------------- *\
+        NAVBAR
+\* --------------------- */
+
+body{
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .container-fluid{
+    background-color: #056DAE;
+  }
+  
+  .navbar-ingresar ul li{
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 4rem;
+    font-weight: 900;
+  }
+  
+  .navbar{
+    padding: 0;
+  }
+  
+  .navbar-brand{
+    margin: 0 4rem;
+  }
+  
+  .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
+    color: rgb(255 255 255 / 90%);
+  }
+  
+  /* --------------------- *\
+    SECCION BANNER
+  \* --------------------- */
+  
+  .banner-card{
+    padding: 20px;
+    width: 500px;
+    height: 250px;
+    position: absolute;
+    border-radius: 15px;
+    left: 100px;
+    background-color: #fff;
+    box-shadow: 0px 0px 8px 2px rgba(138,134,138,1);
+    -webkit-box-shadow: 0px 0px 8px 2px rgba(138,134,138,1);
+    -moz-box-shadow: 0px 0px 8px 2px rgba(138,134,138,1);
+    top: 18vh;
+    position:absolute;
+    margin-top: 7rem;
+  }
+  
+  .card-content{
+    margin-left: 1rem;
+  }
+  
+  .card-content h1{
+    font-weight: 500;
+    font-size: 2.2rem;
+    margin:0;
+  }
+  
+  .card-content b{
+    font-weight: 700 ;
+  }
+  
+  
+  .card-content p{
+    margin-top: 1rem;
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+  
+  .card-content a{
+    color:#056DAE;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+  
+  }
+  
+  /* --------------------- *\
+    SECCION BIENVENIDA
+  \* --------------------- */
+  
+  
+  .section-welcome{
+    background-color: #fff;
+  }
+  
+  .section-welcome h2{
+    color: #000;
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem;
+    font-weight: 400;
+    font-size: 2rem;
+    margin-top: 4rem;
+  
+  }
+  
+  /*IZQ*/
+  
+  .section-welcome .card{
+    height: 300px;
+  
+  }
+  
+  .section-welcome .card .mb-3{
+    padding: 20px;
+    width: 500px;
+    height: 250px;
+    position: absolute;
+    border-radius: 15px;
+    left: 100px;
+    background-color: #056DAE;
+    top: 3vh;
+    position:absolute;
+    margin-top: 0;
+  }
+  
+  .section-welcome .card-body-izq{
+    background-color:#056DAE ;
+  }
+  
+  .section-welcome .card-title-izq{
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.7rem;
+    margin-left: 0.7rem;
+    margin-right: 0.7rem;
+  }
+  
+  .section-welcome .card-text-izq{
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  
+  }
+  
+  /*DER*/
+  
+  .section-welcome .card-body-der{
+    background-color:#fff;
+  }
+  
+  .section-welcome .card-title-der{
+    color: #000;
+    font-weight: 600;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  
+  }
+  
+  .section-welcome .col{
+    /*padding: 20px;*/
+    width: 170px;
+    height: 170px;
+    /*position: absolute;*/
+    border-radius: 15px;
+    /*left: 100px;*/
+    background-color: #fff;
+    box-shadow: 0px 0px 8px 2px rgba(138,134,138,1);
+    -webkit-box-shadow: 0px 0px 8px 2px rgba(138,134,138,1);
+    -moz-box-shadow: 0px 0px 8px 2px rgba(138,134,138,1);
+    /*top: 18vh;*/
+    /*position:absolute;*/
+    margin-top: 5rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+  
+  .section-welcome .card{
+    border: 1px solid rgb(255 255 255 / 13%);
+  }
+  
+  .section-welcome .card-title-der{
+    margin: 0;
+  }
+  
+  .section-welcome .welcome-img{
+    width: 50px;
+    height: 50px;
+    margin: 2.5rem;
+    margin-left: 3rem;
+  
+  
+  }
+  
+  
+  
+  
+  /* --------------------- *\
+    SECCION SOLICITUD EN LINEA
+  \* --------------------- */
+  
+  .section-online{
+    background-color: #fff;
+  }
+  
+  .section-online h2{
+    color: #000;
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem;
+    font-weight: 400;
+    font-size: 2rem;
+  
+  }
+  
+  .card-body{
+    background-color:#c7d5eb;
+    height: 538px;
+  }
+ .card-title{
+    margin: 2rem ;
+    font-size: 2rem;
+    font-weight: 450;
+  }
+  
+  .card-text li{
+    margin: 3.5rem;
+    list-style: none;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .card-text li img{
+    margin-right: 1rem; 
+  }
+  
+  .section-online .card {
+    border: none;
+  }
+  
+  /* --------------------- *\
+    SECCION CONOCENOS
+  \* --------------------- */
+  .section-we {
+    background-color: #fff;
+  }
+  
+  .section-we h2{
+    color: #000;
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem;
+    font-weight: 400;
+    font-size: 2rem;
+    margin-top: 4rem;
+  
+  }
+  
+  .section-we .card-body{
+    background-color: #fff;
+    height: 90px;
+    border-radius: 15px;
+  
+  }
+  
+  .section-we .card{
+    
+    /*padding: 0px;*/
+    width: 360px;
+    /*position: absolute;*/
+    border-radius: 15px;
+    /*left: 100px;*/
+    background-color: #fff;
+    box-shadow: 0px 0px 8px 2px rgba(138,134,138,1);
+    -webkit-box-shadow: 0px 0px 8px 2px rgba(138,134,138,1);
+    -moz-box-shadow: 0px 0px 8px 2px rgba(138,134,138,1);
+    /*top: 18vh;*/
+    /*position:absolute;*/
+    /*margin-top: 4rem;*/
+    /*margin-right: 4rem;*/
+  
+  }
+  
+  .section-we a{
+    font-size: 1.3rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+    color: #000;
+  }
+  
+  .section-we .col{
+    padding: 0;
+    margin-left: 4.5rem;
+    /*margin-right: 2rem;*/
+    width: 360px;
+  }
+  
+  
+  /* --------------------- *\
+    SECCION AYUDA
+  \* --------------------- */
+  
+  .section-help {
+    background-color: #fff;
+    margin: 5rem 0;
+  }
+  
+  
+  .section-help .card-body{
+    background-color:#056DAE;
+    height: 325px;
+    color: #fff;
+    
+  
+  }
+  
+  .section-help img{
+    margin: 2rem ;
+    margin-bottom: 1rem;
+    margin-left: 18rem;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .section-help .card-title {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    font-weight: 500;
+    
+  }
+  
+  .section-help p{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: 350;
+    
+  }
+  
+  .section-help .btn{
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    color:#056DAE;
+    margin-left: 14rem;
+    margin-right: 14rem;
+    font-weight: 900;
+    border-color: #fff;
+    border-radius: 9px;
+  
+  }
+  
+  .section-help .col-md-6{
+    background-color:#c7d5eb;
+  }
+  
+  .section-help  .list-help{
+    margin: 3rem;
+  }
+  .section-help ul{
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 2rem;
+    
+  }
+  
+  .section-help li{
+    list-style: none;
+    color:dimgray;
+    font-size: 1rem;
+    font-weight: 800;
+  
+  }
+  
+  .section-help li a{
+    font-size: 1rem;
+    font-weight: 800;
+    color:#056DAE;
+    text-decoration: none;
+  }
+  
+  /* --------------------- *\
+    FOOTER
+  \* --------------------- */
+  
+  /*UP*/
+  .footer-up .container-fluid{
+    background-color: #292c33;
+    height: 300px;
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  
+  .footer-logo{
+    margin-top: 2rem;
+    margin-left: 3rem;
+  }
+  
+  .footer-up .navbar-nav{
+    margin-top: 2rem;
+    margin-right: 10rem;
+  }
+  
+  .footer-up a{
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+  
+  /*DOWN*/
+  
+  .footer-down .container-fluid{
+    background-color: #292c33;
+    height: 50px;
+    
+  }
+  
+  .footer-down .footer-links{
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer-down li{
+    list-style: none;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+  
+  }
+  
+  .footer-links{
+    margin-left: 4rem;
+    margin-right: 10rem;
+  }
+  
+  .footer-down li a{
+    font-size: 0.8rem;
+    font-weight: 700;
+    color:dimgray;
+    text-decoration: none;
+  }
+  
+  /*TERMINO LA LANDING PAGE*/
