@@ -1,0 +1,173 @@
+.menu-principal {
+    margin-top: 2rem;
+}
+
+.navbar-Principal {
+    margin-top: 2rem;
+    background-color: #21516e;
+    color: #ffff;
+}
+
+.style-1 {
+    background-color: #056DAE;
+    color: #ffff;
+}
+
+.style-2 {
+    background-color: #21516e;
+    color: #ffff;
+    transition: background 0.2s;
+}
+
+.link-desconexion {
+    background: #b30c4c;
+    padding: 1px 1px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/*Texto*/
+
+.NavTop-Text1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/*Base*/
+
+.container-principal {
+    padding: 0%;
+}
+
+.sepmar {
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+
+/*HomeUser*/
+
+.text-paragraph {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 0rem
+}
+
+.text-Ttle-bold {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.card-facilidades {
+    display: inline;
+}
+
+.text-Main {
+    margin-top: 1.6rem;
+    margin-left: 2.3rem;
+}
+
+.card-Main {
+    margin-top: 2.2rem;
+    margin-right: 2.3rem;
+}
+
+/*-----------------------------------
+              LOGIN
+  -----------------------------------*/
+
+.logo {
+    height: 6vh;
+}
+
+.separator {
+    border-left: thick solid white;
+}
+
+.separator h4 {
+    color: white;
+    line-height: 32px;
+    text-indent: 10px;
+}
+
+.container1 {
+    width: 100%;
+    height: 100%;
+}
+
+/*------------------------------
+             form
+  ------------------------------*/
+
+.formContainer {
+    width: 25%;
+    height: 390px;
+    background: white;
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 0px 8px 2px rgba(138, 134, 138, 1);
+    -moz-box-shadow: 0px 0px 8px 2px rgba(138, 134, 138, 1);
+    box-shadow: 0px 0px 8px 2px rgba(138, 134, 138, 1);
+    padding: 10px;
+    position: absolute;
+    left: 100px;
+    top: 20vh;
+}
+
+.form-text {
+    line-height: 30px;
+}
+
+.btn {
+    width: 100%;
+    height: 50px;
+}
+
+/*------------------------------
+              card
+  ------------------------------*/
+
+.cad-content {
+    width: 70%;
+    float: right;
+}
+
+.sub-header {
+    text-align: center;
+}
+
+.card-deck {
+    padding: 10px;
+}
+
+.card-body {
+    border-radius: 20px;
+    height: 130px;
+    border: 1px solid rgb(121, 120, 120);
+    -webkit-box-shadow: 0px 0px 8px 2px rgba(138, 134, 138, 1);
+    -moz-box-shadow: 0px 0px 8px 2px rgba(138, 134, 138, 1);
+    box-shadow: 0px 0px 8px 2px rgba(138, 134, 138, 1);
+}
+
+.card-title {
+    text-align: center;
+    line-height: 20px;
+    color: #056DAE;
+    font-weight: 900;
+}
+
+.card-text {
+    text-align: center;
+}
+
+/*Form1SC*/
+
+/*Form2SC*/
+
+.uso-cuenta {
+    margin-top: 1.4rem;
+}
+
+.card-Principal-Form {
+    margin-top: 1.5rem;
+}
