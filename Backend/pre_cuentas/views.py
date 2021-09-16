@@ -55,9 +55,21 @@ def clientDataSC(request):
 
 #@login_required
 def form1SC(request):
-
-    return render(request, 'components/Form1SC.html')
-
+    form2= ForeignTransferForm()
+    form = RequestForm()
+    if request.method == 'POST':
+        pass
+    else:
+        form = RequestForm()
+    return render(
+        request=request,
+        template_name='components/Form1SC.html',
+        context={
+            'form': form,
+            "form2":form2
+        }
+    )
+    
 #@login_required
 def form2SC(request):
     return render(request, 'components/Form2SC.html')

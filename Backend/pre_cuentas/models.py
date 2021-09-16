@@ -36,7 +36,7 @@ class ForeignTransfer(models.Model):
         ("Arg", "Argentina"),
         ("Ecu", "Ecuador")
     )
-    transfer_abroad = models.CharField(max_length=1)
+    transfer_abroad = models.BooleanField()
     origin = models.CharField(max_length=3, blank=True, null=True, choices=COUNTRIES)
     destiny = models.CharField(max_length=3, blank=True, null=True, choices=COUNTRIES)
     def __str__(self):

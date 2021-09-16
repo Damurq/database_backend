@@ -1,5 +1,6 @@
 from .models import *
-from django.forms import ModelForm
+from django.forms import ModelForm, Form
+from django import forms
 
 
 class ClientForm(ModelForm):
@@ -36,10 +37,30 @@ class ForeignTransferForm(ModelForm):
 #         model = Office
 #         fields = ['name', 'municipality_code', 'address']
 
+class OfficeForm(forms.Form):
+    state = forms.ModelChoiceField(
+        queryset = State.objects.all()
+    )
+    municipality = forms.ModelChoiceField(
+        queryset = Municipality.objects.all()
+    )
+    office = forms.ModelChoiceField(
+        queryset = Office.objects.all()
+    )
 
 class RequestForm(ModelForm):
+    state = forms.ModelChoiceField(
+        queryset = State.objects.all()
+    )
+    municipality = forms.ModelChoiceField(
+        queryset = Municipality.objects.all()
+    )
+    office = forms.ModelChoiceField(
+        queryset = Office.objects.all()
+    )
+
     # specify the name of model to use
     class Meta:
         model = Request
-        fields = ['office_code', 'foreign_transfer_code', 'account_type', 'reason', 'expiration_date', 'account_usage', 'estimated_amount_mobilization', 'average_monthly_transaction',
+        fields = ["office","municipality","state",'account_type', 'reason', 'expiration_date', 'account_usage', 'estimated_amount_mobilization', 'average_monthly_transaction',
                   'background_source', 'background_destination']
