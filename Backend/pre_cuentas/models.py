@@ -26,24 +26,6 @@ class Client(models.Model):
             models.UniqueConstraint(fields=['document_type', 'document_number'], name='unique_document')
         ]
 
-class ForeignTransfer(models.Model):
-    COUNTRIES = (
-        ("Ven", "Venezuela"),
-        ("Col", "Colombia"),
-        ("Per", "Peru"),
-        ("Chi", "Chile"),
-        ("Bra", "Brasil"),
-        ("Arg", "Argentina"),
-        ("Ecu", "Ecuador")
-    )
-    transfer_abroad = models.BooleanField()
-    origin = models.CharField(max_length=3, blank=True, null=True, choices=COUNTRIES)
-    destiny = models.CharField(max_length=3, blank=True, null=True, choices=COUNTRIES)
-    def __str__(self):
-        return self.name
-    class Meta:  
-        db_table = 'ForeignTransfer'
-
 class State(models.Model):
     name = models.CharField(max_length=255, unique=True)
     state = models.CharField(max_length=1, default='A')                                          # Faltan opciones
@@ -65,6 +47,7 @@ class Office(models.Model):
     name = models.CharField(max_length=255, unique=True)
     municipality_code = models.ForeignKey(Municipality, on_delete= models.CASCADE)
     address = models.TextField(max_length=500)
+    request_limit_day = models.SmallIntegerField()
     state = models.CharField(max_length=1, default='A')                                          # Faltan opciones
     def __str__(self):
         return self.name
@@ -112,19 +95,27 @@ class Request(models.Model):
         ("Ma20Me50", "Mayor que 20 y menor que 50"),
         ("Ma51Me100", "Mayor que 51 y menor que 100")
     )
+    COUNTRIES = (
+        ("Ven", "Venezuela"),
+        ("Col", "Colombia"),
+        ("Per", "Peru"),
+        ("Chi", "Chile"),
+        ("Bra", "Brasil"),
+        ("Arg", "Argentina"),
+        ("Ecu", "Ecuador")
+    )
     code = models.AutoField(primary_key=True)
     client_document_id = models.ForeignKey(Client, on_delete=models.CASCADE)
     office_code = models.ForeignKey(Office, on_delete=models.CASCADE)
-    foreign_transfer_code = models.ForeignKey(ForeignTransfer, on_delete=models.PROTECT)
     account_type = models.CharField(max_length=2, choices=ACCOUNT_TYPE)                                  
     reason = models.CharField(max_length=3,choices=REASON)                                        
     expiration_date = models.DateField(auto_now =False, auto_now_add=False)
     date_issue = models.DateField(auto_now =False, auto_now_add=True)
     account_usage = models.CharField(max_length=5, choices=ACCOUNT_USAGE)
     estimated_amount_mobilization = models.CharField(max_length=15, choices=ESTIMATED_AMOUNT_MOBILIZATION)                  
-    average_monthly_transaction = models.CharField(max_length=9, choices=AVERAGE_MONTHLY_TRANSACTION)                    
-    background_source = models.CharField(max_length=1)                              # Faltan opciones
-    background_destination = models.CharField(max_length=1)                         # Faltan opciones
+    average_monthly_transaction = models.CharField(max_length=9, choices=AVERAGE_MONTHLY_TRANSACTION)   
+    transfer_origin = models.CharField(max_length=3, choices=COUNTRIES)
+    transfer_destiny = models.CharField(max_length=3, choices=COUNTRIES)                 
     state = models.CharField(max_length=1, default='A')                                          # Faltan opciones
     def __str__(self):
         return self.code

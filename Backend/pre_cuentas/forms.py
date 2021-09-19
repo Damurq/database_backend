@@ -10,13 +10,6 @@ class ClientForm(ModelForm):
         fields = ['document_type', 'document_number']
 
 
-class ForeignTransferForm(ModelForm):
-    # specify the name of model to use
-    class Meta:
-        model = ForeignTransfer
-        fields = ['transfer_abroad', 'origin', 'destiny']
-
-
 # class StateForm(ModelForm):
 #     # specify the name of model to use
 #     class Meta:
@@ -63,4 +56,4 @@ class RequestForm(ModelForm):
     class Meta:
         model = Request
         fields = ["office","municipality","state",'account_type', 'reason', 'expiration_date', 'account_usage', 'estimated_amount_mobilization', 'average_monthly_transaction',
-                  'background_source', 'background_destination']
+                  'transfer_origin', 'transfer_destiny']

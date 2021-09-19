@@ -55,7 +55,6 @@ def clientDataSC(request):
 
 #@login_required
 def form1SC(request):
-    form2= ForeignTransferForm()
     form = RequestForm()
     if request.method == 'POST':
         pass
@@ -66,7 +65,6 @@ def form1SC(request):
         template_name='components/Form1SC.html',
         context={
             'form': form,
-            "form2":form2
         }
     )
     
