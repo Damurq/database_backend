@@ -4,8 +4,7 @@ from .models import *
 class ClientAdmin(admin.ModelAdmin):
     pass
 
-class ForeignTransferAdmin(admin.ModelAdmin):
-    pass
+
 
 
 class StateAdmin(admin.ModelAdmin):
@@ -25,7 +24,6 @@ class RequestAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Client, ClientAdmin)
-admin.site.register(ForeignTransfer, ForeignTransferAdmin)
 admin.site.register(State, StateAdmin)
 admin.site.register(Municipality, MunicipalityAdmin)
 admin.site.register(Office, OfficeAdmin)
