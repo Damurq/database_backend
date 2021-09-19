@@ -114,8 +114,8 @@ class Request(models.Model):
     account_usage = models.CharField(max_length=5, choices=ACCOUNT_USAGE)
     estimated_amount_mobilization = models.CharField(max_length=15, choices=ESTIMATED_AMOUNT_MOBILIZATION)                  
     average_monthly_transaction = models.CharField(max_length=9, choices=AVERAGE_MONTHLY_TRANSACTION)   
-    transfer_origin = models.CharField(max_length=3, choices=COUNTRIES)
-    transfer_destiny = models.CharField(max_length=3, choices=COUNTRIES)                 
+    transfer_origin = models.CharField(max_length=3, choices=COUNTRIES, default="Ven")
+    transfer_destiny = models.CharField(max_length=3, choices=COUNTRIES, default="Ven")                 
     state = models.CharField(max_length=1, default='A')                                          # Faltan opciones
     def __str__(self):
         return self.code
