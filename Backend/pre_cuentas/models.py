@@ -47,7 +47,7 @@ class Office(models.Model):
     name = models.CharField(max_length=255, unique=True)
     municipality_code = models.ForeignKey(Municipality, on_delete= models.CASCADE)
     address = models.TextField(max_length=500)
-    request_limit_day = models.SmallIntegerField()
+    request_limit_day = models.SmallIntegerField(default=1)
     state = models.CharField(max_length=1, default='A')                                          # Faltan opciones
     def __str__(self):
         return self.name
