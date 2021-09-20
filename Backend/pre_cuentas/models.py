@@ -118,7 +118,7 @@ class Request(models.Model):
     transfer_destiny = models.CharField(max_length=3, choices=COUNTRIES, default="Ven")                 
     state = models.CharField(max_length=1, default='A')                                          # Faltan opciones
     def __str__(self):
-        return self.code
+        return str(self.code)
     class Meta:  
         db_table = 'Request'
 

@@ -5,6 +5,7 @@ from .forms import *
 from .models import *
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth import authenticate, login
+"""from django.db.models import Request;"""
   
 def client_view(request):
     context ={}
@@ -73,7 +74,15 @@ def form2SC(request):
     return render(request, 'components/Form2SC.html')
 
 def seeQuote(request):
-    return render(request, 'components/SeeQuote.html')
+    client = request.user.client
+
+    consultQuote = Request.objects.select_related('office_code').filter(client_document_id = client)
+   
+    return render(request, 'components/SeeQuote.html',{'consultQuote' : consultQuote} )
 
 def visualize(request):
-    return render(request, 'components/Visualize.html')
+    client = request.user.client
+
+    consultVoucher = Request.objects.select_related('client_document_id', 'office_code').filter(client_document_id = client)
+
+    return render(request, 'components/Visualize.html', {'consultVoucher' : consultVoucher} )
