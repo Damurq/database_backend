@@ -127,27 +127,8 @@ def create_request(request,municipality):
                     'form2': form_request,
                     "user":client
                 })
-            print("1------------------------------")
-            print(dir(office))
-            print(office.request_limit_day)
-            print("1------------------------------")
             print(check_availability(office.request_limit_day))    
             if check_availability(office.request_limit_day):
-                data2 = form_office.cleaned_data
-                print("1------------------------------")
-                print(data)
-                print("1------------------------------")
-                a = request.POST['office']
-                print("2------------------------------")
-                print(a)
-                print("2------------------------------")
-                print("3------------------------------")
-                print(data2)
-                print("3------------------------------")
-                b = request.POST['average_monthly_transaction']
-                print("4------------------------------")
-                print(b)
-                print("4------------------------------")
                 r = Request.objects.create(
                     client_document_id = request.user.client,
                     office_code = office,
@@ -160,12 +141,9 @@ def create_request(request,municipality):
                     transfer_origin = data['transfer_origin'],
                     transfer_destiny = data['transfer_destiny'],                 
                 )
-
                 r.save()
-                redirect("home_user")
+                return redirect("VisualizeQuote",code_request=r)
             else:
-                print("else")
-
                 return render(request, 'pages/create_request.html', {'error': 'No hay citas disponibles para esta oficina',
                     'form': form_office,
                     'form2': form_request, 
@@ -204,23 +182,11 @@ def visualize_quote(request,code_request):
     return render(request, 'pages/visualize_quote.html', {'consultVoucher' : consultVoucher, "user":client} )
 
 class reportPDF(View):
-    def __init__(self, *args, **kwargs):
-        self.code = None
-        code_request = kwargs.pop('code', None)
-        super(reportPDF, self).__init__(*args, **kwargs)
-        print("here2")
-        if code_request:
-            print("here3")
-            self.code = code_request
-        else:
-            print("here4")
     def get(self, request, *args, **kwargs):
         template = get_template('reportPDF.html')
         client = request.user.client
-        print("--------------------------------------")
-        print(self.code)
-        if self.code:
-            consultVoucher = Request.objects.select_related('client_document_id', 'office_code').filter(client_document_id = client,code =int(self.code))
+        if kwargs.get('code', None):
+            consultVoucher = Request.objects.select_related('client_document_id', 'office_code').filter(client_document_id = client,code =int(kwargs.get('code', None)))
         else:
             consultVoucher = Request.objects.select_related('client_document_id', 'office_code').filter(client_document_id = client)
         html = template.render({'consultVoucher' : consultVoucher})
