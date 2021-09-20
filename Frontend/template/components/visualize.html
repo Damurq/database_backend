@@ -3,7 +3,9 @@
 {% block content %}
             <!-- Contenido -->
             <div class="container" style="background-color: #F5F7FC; height: 542px; text-align: center; margin:4px; border: solid 3px #056DAE">
-                <h1 style="align:center; margin:20px auto;">COMPROBANTE N*09005357</h1>
+                {% for cv in consultVoucher %}
+                <h1 style="align:center; margin:20px auto;">COMPROBANTE N*{{cv.code}}</h1>
+                {% endfor %}
                 <div class="row1" style=" height:100px; margin:10px;">
                     <table class="table" style="width:100%; text-align: center;">
                         <thead>
@@ -15,9 +17,12 @@
                         </thead>
                         <tbody>
                             <tr class="row1-2" style="height:30px">
-                                <td style="font-size: 0.9em;">MARIHEC ESTER MIRANDA TOVAR</td>
-                                <td style="font-size: 0.9em;">26.120.075</td>
-                                <td style="font-size: 0.9em;">13/09/2021</td>
+                                {% for cv in consultVoucher %}
+                                    <td style="font-size: 0.9em;">{{cv.client_document_id.first_name}} {{cv.client_document_id.last_name}}</td>
+                                    <td style="font-size: 0.9em;">{{cv.client_document_id.document_type}} - {{cv.client_document_id.document_number}}</td>
+                                    <td style="font-size: 0.9em;">{{cv.date_issue.day}} / {{cv.date_issue.month}} / {{cv.date_issue.year}}</td>
+                                {% endfor %}
+
                             </tr>
                         </tbody>
                     </table>
@@ -33,9 +38,11 @@
                         </thead>
                         <tbody>
                             <tr class="row2-2" style="height:30px">
-                                <td style="font-size: 0.9em;">CUENTA CORRIENTE</td>
-                                <td style="font-size: 0.9em;">LOS LEONES-Barquisimeto</td>
-                                <td style="font-size: 0.9em;">0315</td>
+                                {% for cv in consultVoucher %}
+                                    <td style="font-size: 0.9em;">{{cv.account_type}}</td>
+                                    <td style="font-size: 0.9em;">{{cv.office_code.name}}</td>
+                                    <td style="font-size: 0.9em;">{{cv.office_code.id}}</td>
+                                {% endfor %}
                             </tr>
                         </tbody>
                     </table>
@@ -49,7 +56,9 @@
                         </thead>
                         <tbody>
                             <tr class="row3-2" style="height:30px">
-                                <td style="font-size: 1em;">Av. Los Leones, CC Los Leones, PB, Locales 1, 2 y 3, sector Este, Municipio Iribarren. </td>
+                                {% for cv in consultVoucher %}
+                                    <td style="font-size: 1em;">{{cv.office_code.address}} </td>
+                                {% endfor %}
                             </tr>
                         </tbody>
                     </table>
