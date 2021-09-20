@@ -1,14 +1,12 @@
-{% extends "Base2.html" %}
-{% load static %}
-{% block content %}
-<!-- Contenido -->
-<div class="container" style="background-color: #F5F7FC; height: 550px; text-align: center; padding-Top:20px">
+<div class="container" style="background-color: #F5F7FC; height: 650px; text-align: center; padding-Top:20px">
     <table class="table table-hover">
         <thead>
             <tr style="background: #21516e; border-bottom: solid 10px #056DAE; color:white; border: solid 1px #21516e;">
                 <th scope="col">Código</th>
                 <th scope="col">Fecha de Cita</th>
                 <th scope="col">Dirección de Oficina</th>
+                <th scope="col">Visualizar</th>
+                <th scope="col">Descargar</th>
             </tr>
         </thead>
         <tbody>
@@ -19,6 +17,8 @@
                 <th scope="row">{{cq.code}}</th>
                 <td>{{cq.date_issue.day}} / {{cq.date_issue.month}} / {{cq.date_issue.year}}</td>
                 <td>{{cq.office_code.address}}</td>
+                <td><a class="btn btn-primary" href="{% url 'VisualizeQuote' code_request=cq.code %}" >Ver</a></td>
+                <td><a class="btn btn-primary" href="{% url 'report' code=cq.code %}" >PDF</a></td>
             </tr>
             {% endfor %}
             {% else %}
@@ -28,9 +28,4 @@
             {% endif %}
         </tbody>
     </table>
-    <div class="buttons" style="display: flex; padding:100px;">
-        <a type="button" class="btn btn-outline-info" href="{% url 'Visualize' %}">Visualizar</a>
-        <button style="margin-left: 10px" type="button" class="btn btn-outline-success">Descargar</button>
-    </div>
 </div>
-{% endblock content %}

@@ -1,11 +1,13 @@
-from django.http import HttpResponse
+from django.views.generic import View
+from django.template.loader import get_template
 from django.shortcuts import redirect, render
+from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
-from .forms import *
-from .models import *
-from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth import authenticate, login
 from datetime                           import datetime, timedelta, date
+from .utils import render_to_pdf
+from .models import *
+from .forms import *
 
 def check_availability(limit):
     date_ = None
@@ -189,21 +191,38 @@ def create_request(request,municipality):
         }
     )
 
-    
-#@login_required
-def form2SC(request):
-    return render(request, 'components/Form2SC.html')
-
-def seeQuote(request):
+@login_required
+def see_quote(request):
     client = request.user.client
-
     consultQuote = Request.objects.select_related('office_code').filter(client_document_id = client)
+    return render(request, 'pages/see_quote.html',{'consultQuote' : consultQuote, "user":client} )
 
-    return render(request, 'components/SeeQuote.html',{'consultQuote' : consultQuote} )
-
-def visualize(request):
+@login_required
+def visualize_quote(request,code_request):
     client = request.user.client
+    consultVoucher = Request.objects.select_related('client_document_id', 'office_code').filter(client_document_id = client,code =int(code_request))
+    return render(request, 'pages/visualize_quote.html', {'consultVoucher' : consultVoucher, "user":client} )
 
-    consultVoucher = Request.objects.select_related('client_document_id', 'office_code').filter(client_document_id = client)
-
-    return render(request, 'components/Visualize.html', {'consultVoucher' : consultVoucher} )
+class reportPDF(View):
+    def __init__(self, *args, **kwargs):
+        self.code = None
+        code_request = kwargs.pop('code', None)
+        super(reportPDF, self).__init__(*args, **kwargs)
+        print("here2")
+        if code_request:
+            print("here3")
+            self.code = code_request
+        else:
+            print("here4")
+    def get(self, request, *args, **kwargs):
+        template = get_template('reportPDF.html')
+        client = request.user.client
+        print("--------------------------------------")
+        print(self.code)
+        if self.code:
+            consultVoucher = Request.objects.select_related('client_document_id', 'office_code').filter(client_document_id = client,code =int(self.code))
+        else:
+            consultVoucher = Request.objects.select_related('client_document_id', 'office_code').filter(client_document_id = client)
+        html = template.render({'consultVoucher' : consultVoucher})
+        pdf = render_to_pdf('reportPDF.html', {'consultVoucher' : consultVoucher})
+        return HttpResponse(pdf, content_type='application/pdf')

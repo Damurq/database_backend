@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+{% load static %}
+    <body style="font-weight: 200; font-size: 25px;">
+            <!-- Contenido -->
+            <div class="container" style="background-color: #F5F7FC; height: 542px; text-align: center; margin:4px;">
+                <h1 style="align:center; margin:20px auto;">COMPROBANTE N*{{numero_comprobante}}7</h1>
+                <div class="row1" style=" height:100px; margin:10px;">
+                    <table class="table" style="width:100%; text-align: center;">
+                        <thead> 
+                            <tr class="row1-1" style="height:40px; border-bottom: solid 1px #056DAE; padding-top:2px;">
+                                <th style="font-size: 0.7em; background-color: #dcdcdc;" scope="col">Nombres y Apellidos</th>
+                                <th style="font-size: small; background-color: #dcdcdc;" scope="col">Tipo-Número de documento</th>
+                                <th style="font-size: small; background-color: #dcdcdc;" scope="col">Fecha del Comprobante</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="row1-2" style="height:50px">
+                                {% for cv in consultVoucher %}
+                                    <td style="font-size: 0.7em; padding-top:5px">{{cv.client_document_id.first_name}} {{cv.client_document_id.last_name}}</td>
+                                    <td style="font-size: 0.7em;">{{cv.client_document_id.document_type}} - {{cv.client_document_id.document_number}}</td>
+                                    <td style="font-size: 0.7em;">{{cv.date_issue.day}} / {{cv.date_issue.month}} / {{cv.date_issue.year}}</td>
+                                {% endfor %}
+                            </tr>
+                        </tbody>
+                    </table>
+                <div>
+                <div class="row2" style="height:100px; padding-top:10px">
+                    <table class="table" style="width:100%; text-align: center;">
+                        <thead>
+                            <tr class="row2-1" style="height:40px; border-bottom: solid 1px #056DAE;">
+                                <th style="font-size: small; background-color: #dcdcdc;" scope="col">Tipo de cuenta</th>
+                                <th style="font-size: small; background-color: #dcdcdc;" scope="col">Oficina</th>
+                                <th style="font-size: small; background-color: #dcdcdc;" scope="col">Código de oficina</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="row2-2" style="height:45px">
+                                {% for cv in consultVoucher %}
+                                    <td style="font-size: 0.9em;">{{cv.account_type}}</td>
+                                    <td style="font-size: 0.9em;">{{cv.office_code.name}}</td>
+                                    <td style="font-size: 0.9em;">{{cv.office_code.id}}</td>
+                                {% endfor %}
+                            </tr>
+                        </tbody>
+                    </table>
+                <div>
+                <div class="row3" style="height:100px; padding-top:10px">
+                    <table class="table" style="width:100%; text-align: center;">
+                        <thead>
+                            <tr class="row3-1" style="height:40px; border-bottom: solid 1px #056DAE;">
+                                <th style="font-size: small; background-color: #dcdcdc;" scope="col">Dirección de la Oficina</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="row3-2" style="height:60px">
+                                {% for cv in consultVoucher %}
+                                    <td style="font-size: 0.8em;">{{cv.office_code.address}}</td>
+                                {% endfor %}
+                            </tr>
+                        </tbody>
+                    </table>
+                <div>
+                <div class="Footer-comp" style="height:70px; width: 90%; margin: 10px auto;">
+                    <h1 class="note" style="color:#056DAE; font-size: small; line-height : 20px;"><small>NOTA: Usted posee 15 días hábiles para formalizar su solicitud en la oficina bancaria señalada. 
+                                Recuerde consignar este comprobante junto a los recaudos al momento de abrir su cuenta</small><h1>
+                </div>
+            </div> 
+ </body>
+</html>

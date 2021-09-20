@@ -1,73 +1,82 @@
-{% extends "Base2.html" %}
-{% load static %}
-{% block content %}
-            <!-- Contenido -->
-            <div class="container" style="background-color: #F5F7FC; height: 542px; text-align: center; margin:4px; border: solid 3px #056DAE">
-                {% for cv in consultVoucher %}
-                <h1 style="align:center; margin:20px auto;">COMPROBANTE N*{{cv.code}}</h1>
-                {% endfor %}
-                <div class="row1" style=" height:100px; margin:10px;">
-                    <table class="table" style="width:100%; text-align: center;">
-                        <thead>
-                            <tr class="row1-1" style="background: #dcdcdc; height:10px">
-                                <th style="font-size: small;" scope="col">Nombres y Apellidos</th>
-                                <th style="font-size: small;" scope="col">Tipo-Número de documento</th>
-                                <th style="font-size: small;" scope="col">Fecha del Comprobante</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="row1-2" style="height:30px">
-                                {% for cv in consultVoucher %}
-                                    <td style="font-size: 0.9em;">{{cv.client_document_id.first_name}} {{cv.client_document_id.last_name}}</td>
-                                    <td style="font-size: 0.9em;">{{cv.client_document_id.document_type}} - {{cv.client_document_id.document_number}}</td>
-                                    <td style="font-size: 0.9em;">{{cv.date_issue.day}} / {{cv.date_issue.month}} / {{cv.date_issue.year}}</td>
-                                {% endfor %}
+<div class="container"
+    style="background-color: #F5F7FC; height: 650px; text-align: center; margin:4px; border: solid 3px #056DAE">
+    {% for cv in consultVoucher %}
+    <h1 style="align:center; margin:20px auto;">COMPROBANTE N*{{cv.code}}</h1>
+    {% endfor %}
+    <div class="row1" style=" height:100px; margin:10px;">
+        <table class="table" style="width:100%; text-align: center;">
+            <thead>
+                <tr class="row1-1" style="background: #dcdcdc; height:10px">
+                    <th style="font-size: small;" scope="col">Nombres y Apellidos</th>
+                    <th style="font-size: small;" scope="col">Tipo-Número de documento</th>
+                    <th style="font-size: small;" scope="col">Fecha del Comprobante</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="row1-2" style="height:30px">
+                    {% for cv in consultVoucher %}
+                    <td style="font-size: 0.9em;">{{cv.client_document_id.first_name}}
+                        {{cv.client_document_id.last_name}}</td>
+                    <td style="font-size: 0.9em;">{{cv.client_document_id.document_type}} -
+                        {{cv.client_document_id.document_number}}</td>
+                    <td style="font-size: 0.9em;">{{cv.date_issue.day}} / {{cv.date_issue.month}} /
+                        {{cv.date_issue.year}}</td>
+                    {% endfor %}
 
-                            </tr>
-                        </tbody>
-                    </table>
+                </tr>
+            </tbody>
+        </table>
+        <div>
+            <div class="row2" style="height:100px; padding-top:5px">
+                <table class="table" style="width:100%; text-align: center;">
+                    <thead>
+                        <tr class="row2-1" style="background: #dcdcdc; height:30px">
+                            <th style="font-size: small;" scope="col">Tipo de cuenta</th>
+                            <th style="font-size: small;" scope="col">Oficina</th>
+                            <th style="font-size: small;" scope="col">Código de oficina</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="row2-2" style="height:30px">
+                            {% for cv in consultVoucher %}
+                            <td style="font-size: 0.9em;">{{cv.account_type}}</td>
+                            <td style="font-size: 0.9em;">{{cv.office_code.name}}</td>
+                            <td style="font-size: 0.9em;">{{cv.office_code.id}}</td>
+                            {% endfor %}
+                        </tr>
+                    </tbody>
+                </table>
                 <div>
-                <div class="row2" style="height:100px; padding-top:5px">
-                    <table class="table" style="width:100%; text-align: center;">
-                        <thead>
-                            <tr class="row2-1" style="background: #dcdcdc; height:30px">
-                                <th style="font-size: small;" scope="col">Tipo de cuenta</th>
-                                <th style="font-size: small;" scope="col">Oficina</th>
-                                <th style="font-size: small;" scope="col">Código de oficina</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="row2-2" style="height:30px">
-                                {% for cv in consultVoucher %}
-                                    <td style="font-size: 0.9em;">{{cv.account_type}}</td>
-                                    <td style="font-size: 0.9em;">{{cv.office_code.name}}</td>
-                                    <td style="font-size: 0.9em;">{{cv.office_code.id}}</td>
-                                {% endfor %}
-                            </tr>
-                        </tbody>
-                    </table>
-                <div>
-                <div class="row3" style="height:100px;">
-                    <table class="table" style="width:100%; text-align: center;">
-                        <thead>
-                            <tr class="row3-1" style="background: #dcdcdc; height:30px">
-                                <th style="font-size: small;" scope="col">Dirección de la Oficina</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="row3-2" style="height:30px">
-                                {% for cv in consultVoucher %}
+                    <div class="row3" style="height:100px;">
+                        <table class="table" style="width:100%; text-align: center;">
+                            <thead>
+                                <tr class="row3-1" style="background: #dcdcdc; height:30px">
+                                    <th style="font-size: small;" scope="col">Dirección de la Oficina</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="row3-2" style="height:30px">
+                                    {% for cv in consultVoucher %}
                                     <td style="font-size: 1em;">{{cv.office_code.address}} </td>
-                                {% endfor %}
-                            </tr>
-                        </tbody>
-                    </table>
-                <div>
-                <div class="Footer-comp" style="height:80px; width: 90%; margin: 20px auto;">
-                    <h1 class="note" style="color:#056DAE; font-size: large;"><small>NOTA: Usted posee 15 días hábiles para formalizar su solicitud en la oficina bancaria señalada. 
-                                Recuerde consignar este comprobante junto a los recaudos al momento de abrir su cuenta</small><h1>
+                                    {% endfor %}
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div>
+                            <div class="Footer-comp" style="height:80px; width: 90%; margin: 20px auto;">
+                                <h1 class="note" style="color:#056DAE; font-size: large;"><small>NOTA: Usted posee 15
+                                        días hábiles para formalizar su solicitud en la oficina bancaria señalada.
+                                        Recuerde consignar este comprobante junto a los recaudos al momento de abrir su
+                                        cuenta</small>
+                                    <h1>
+                            </div>
+                            {% for cv in consultVoucher %}
+                                <a style="width:20%;" type="button" class="btn btn-primary" href="{% url 'report' code=cv.code %}">Imprimir</a>
+                            {% endfor %}
+                        </div>
+                    </div>
                 </div>
-                <button style="width:20%;" type="button" class="btn btn-outline-primary">Imprimir</button>
-            </div> 
-
-{% endblock content %}
+            </div>
+        </div>
+    </div>
+</div>
