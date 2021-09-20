@@ -20,8 +20,9 @@
 }
 
 .link-desconexion {
+  border-radius: 15px;
   background: #b30c4c;
-  padding: 1px 1px;
+  padding: .4rem 1rem;
   font-size: 12px;
   font-weight: bold;
 }

@@ -16,24 +16,32 @@ def check_availability(limit):
             break
     return date_
 
-def client_view(request):
-    context ={}
-    # create object of form
-    form = ClientForm(request.POST)
-    # check if form data is valid
-    if form.is_valid():
-        # save the form data to model
-        form.save()
-    context['form']= form
-    return render(request, "pages/cliente.html", context)
-
 @login_required
 def home_user(request):
-    return render(request, 'HomeUser.html')
+    """Loads the start menu of the user panel
+
+    Args:
+        request (HttpRequest): object HttpRequest
+
+    Returns:
+        HttpResponse: template home_user
+    """
+    client = request.user.client
+    context ={"user":client}
+    return render(request, 'pages/home_user.html',context)
 
 @login_required
 def request_message(request):
-    return render(request, 'components/MessageSC.html')
+    """Displays a warning message when creating a 
+    request to open an account
+
+    Args:
+        request (HttpRequest): object HttpRequest
+
+    Returns:
+        HttpResponse: template request_message
+    """
+    return render(request, 'pages/request_message.html')
 
 
 @login_required

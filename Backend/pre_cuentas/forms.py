@@ -18,9 +18,16 @@ class MunicipalityForm(forms.ModelForm):
         fields = ['municipality']
 
 class ClientForm(ModelForm):
-    # specify the name of model to use
+    """
+        Class that generates a verification form to validate the client through his 
+        identity document
+    """
     class Meta:
         model = Client
+        labels = {
+				'document_type': 'Tipo de documento',
+				'document_number': 'Número de documento',
+		}
         fields = ['document_type', 'document_number']
 
 

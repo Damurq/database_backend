@@ -1,0 +1,26 @@
+.container-image{
+    max-height: 280px;
+}
+.container-image .container-image__image{
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+.text--style-dark{
+    color: #F5F7FC;
+    background-color: rgba(0, 0, 0, 0.493);
+    border-radius: 25px;
+}
+
+.banner-text{
+    padding: .5rem;
+}
+
+.presentation .presentation--center{
+    margin: auto;
+    max-width: 90%;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
