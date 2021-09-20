@@ -24,3 +24,15 @@
     align-items: center;
     justify-content: center;
 } 
+
+.request-form{
+    width: 100%;
+}
+
+.request-form .request-form--card .form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+

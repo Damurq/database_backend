@@ -9,7 +9,6 @@ class GroupedModelChoiceIterator(ModelChoiceIterator):
     def __init__(self, field, groupby):
         self.groupby = groupby
         super().__init__(field)
-
     def __iter__(self):
         if self.field.empty_label is not None:
             yield ("", self.field.empty_label)

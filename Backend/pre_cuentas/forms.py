@@ -4,6 +4,10 @@ from django import forms
 from .fields import GroupedModelChoiceField
 
 class MunicipalityForm(forms.ModelForm):
+    """
+        Form that generates a select with a group of options from all the states 
+        and their respective municipalities
+    """
     municipality = GroupedModelChoiceField(
         queryset=Municipality.objects.exclude(state_code=None), 
         choices_groupby='state_code'
@@ -16,6 +20,9 @@ class MunicipalityForm(forms.ModelForm):
     class Meta:
         model = Municipality
         fields = ['municipality']
+        labels = {
+				'municipality': 'Municipio',
+		}
 
 class ClientForm(ModelForm):
     """

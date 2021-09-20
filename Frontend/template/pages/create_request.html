@@ -1,0 +1,9 @@
+{% extends "Base.html" %}
+{% load static %}
+{% block owrnStyle %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/styleBase.css' %}">
+{% endblock %}
+{% block content %}
+{% load crispy_forms_tags %}
+{% include "components/Form1SC.html" %}
+{% endblock content %}
