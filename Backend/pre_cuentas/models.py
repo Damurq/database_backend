@@ -8,7 +8,6 @@ current_date = datetime.now().date()+ timedelta(days=1)
 class Client(models.Model):
     """
     Client.
-
     """
     DOCUMENT_TYPE = (
         ("V","Venezolano"),

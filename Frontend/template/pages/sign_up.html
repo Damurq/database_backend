@@ -1,0 +1,36 @@
+{% extends "base_user.html" %}
+
+{% block head_content %}
+<title>Banco Guacamaya sign up</title>
+{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block container %}
+<div class="container request-form" style="background-color: #F5F7FC; width: 70%;">
+    <h2>Registro de usuario</h2>
+    <br>
+    {% if error %}
+        <p class="alert alert-danger">{{ error }}</p>
+    {% endif %}
+
+    <form action="{% url 'sign_up' %}" method="POST">
+        {% csrf_token %}
+
+        {{ form | crispy }}
+        <Label>Confirmar contraseña:</Label>
+        <div class="form-group">
+            <input class="form-control" type="password" placeholder="Password confirmation" name="passwd_confirmation" required="true" />
+        </div>
+        {{ form2 | crispy }}
+        <div class="form-group">
+            <input class="form-control" type="email" placeholder="Email address" name="email" required="true" />
+        </div>
+        
+        <button class="btn btn-primary btn-block mt-5" type="submit">Register!</button>
+        <br>
+        <br>
+    </form>
+</div>
+
+
+{% endblock %}

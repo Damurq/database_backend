@@ -3,8 +3,7 @@ from django.template.loader import get_template
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate, login
-from datetime                           import datetime, timedelta, date
+from datetime                           import timedelta, date
 from .utils import render_to_pdf
 from .models import *
 from .forms import *
@@ -28,9 +27,12 @@ def home_user(request):
     Returns:
         HttpResponse: template home_user
     """
-    client = request.user.client
-    context ={"user":client}
-    return render(request, 'pages/home_user.html',context)
+    try:
+        client = request.user.client
+        context ={"user":client}
+        return render(request, 'pages/home_user.html',context)
+    except:
+        return redirect('logout')
 
 @login_required
 def request_message(request):

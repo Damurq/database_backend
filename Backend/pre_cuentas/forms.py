@@ -2,6 +2,7 @@ from .models import *
 from django.forms import ModelForm, Form
 from django import forms
 from .fields import GroupedModelChoiceField
+from django.contrib.auth.models import User
 
 class MunicipalityForm(forms.ModelForm):
     """
@@ -74,3 +75,31 @@ class RequestForm(ModelForm):
         fields = ['account_type', 'reason', 'account_usage', 'estimated_amount_mobilization',
                 'average_monthly_transaction',
                 'transfer_origin', 'transfer_destiny']
+
+class UserForm(ModelForm):
+    """
+        Generate a form to register users
+    """
+    class Meta:
+        model = User
+        labels = {
+				'username': 'Nombre de usuario',
+				'password': 'Contraseña',
+		}
+        fields = ['username', 'password']
+
+class ClientForm(ModelForm):
+    """
+        Generate a form to register clients
+    """
+    class Meta:
+        model = Client
+        labels = {
+				'document_type': 'Tipo de documento',
+				'document_number': 'Número de documento',
+                'first_name': 'Nombre',
+                'last_name': 'Apellido',
+                'address': 'Dirección',
+		}
+        fields = ['document_type', 'document_number', 'first_name',
+                'last_name', 'address']

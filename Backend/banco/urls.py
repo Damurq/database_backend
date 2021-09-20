@@ -16,12 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from .views import *
-from pre_cuentas import views as pre
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home_user/', include('pre_cuentas.urls')),
     path("login/",login_view,name="login"),
     path("logout/",logout_view,name="logout"),
+    path("sign_up/",sign_up_view,name="sign_up"),
     path('', landingPage),
 ]
