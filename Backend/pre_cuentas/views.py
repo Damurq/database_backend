@@ -5,17 +5,16 @@ from .forms import *
 from .models import *
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth import authenticate, login
-from datetime                          import datetime, timedelta
-from django.utils.timezone import now
+from datetime                           import datetime, timedelta, date
 
 def check_availability(limit):
-    date = None
+    date_ = None
     for i in range(1,31):
-        next_day = datetime.now().date() + timedelta(days=i)
+        next_day = date.today() + timedelta(days=i)
         if limit > Request.objects.filter(expiration_date=next_day).count():
-            date = next_day
+            date_ = next_day
             break
-    return date
+    return date_
 
 def client_view(request):
     context ={}
@@ -74,19 +73,21 @@ def create_request(request,municipality):
         form_request = RequestForm(request.POST)
         if form_office.is_valid() and form_request.is_valid():
             data = form_request.cleaned_data
-            if check_availability:
-                r = Request.objects.create(
-                    client_document_id = request.user.client,
-                    office_code = request.POST['office'],
-                    account_type = data['account_type'] ,                      
-                    reason = data['reason'],                                        
-                    expiration_date = check_availability,
-                    account_usage = data['account_usage'],
-                    estimated_amount_mobilization = data['estimated_amount_mobilization'],                 
-                    average_monthly_transaction = data['average_monthly_transaction'],   
-                    transfer_origin = data['transfer_origin'],
-                    transfer_destiny = data['transfer_destiny'],                 
-                )
+            try:
+                office = Office.objects.get(id=request.POST['office'])
+            except Exception as e:
+                print("exception")
+                print(e)
+                return render(request, 'components/ClientDataSC.html', {'error': 'No hay citas disponibles para esta oficina',
+                    'form': form_office,
+                    'form2': form_request
+                })
+            print("1------------------------------")
+            print(dir(office))
+            print(office.request_limit_day)
+            print("1------------------------------")
+            print(check_availability(office.request_limit_day))    
+            if check_availability(office.request_limit_day):
                 data2 = form_office.cleaned_data
                 print("1------------------------------")
                 print(data)
@@ -102,13 +103,29 @@ def create_request(request,municipality):
                 print("4------------------------------")
                 print(b)
                 print("4------------------------------")
+                r = Request.objects.create(
+                    client_document_id = request.user.client,
+                    office_code = office,
+                    account_type = data['account_type'] ,                      
+                    reason = data['reason'],                                        
+                    expiration_date = check_availability(office.request_limit_day),
+                    account_usage = data['account_usage'],
+                    estimated_amount_mobilization = data['estimated_amount_mobilization'],                 
+                    average_monthly_transaction = data['average_monthly_transaction'],   
+                    transfer_origin = data['transfer_origin'],
+                    transfer_destiny = data['transfer_destiny'],                 
+                )
+
                 r.save()
                 redirect("home_user")
             else:
+                print("else")
+
                 return render(request, 'components/ClientDataSC.html', {'error': 'No hay citas disponibles para esta oficina',
                     'form': form_office,
                     'form2': form_request
                 })
+            
         else:
             return render(request, 'components/ClientDataSC.html', {'error': 'Invalid document',
             'form': form_office,

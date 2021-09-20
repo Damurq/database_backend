@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
-from datetime                          import datetime, timedelta
+from datetime                          import datetime, timedelta,date
+from django.utils import timezone
+
+current_date = datetime.now().date()+ timedelta(days=1)
 
 class Client(models.Model):
     """
@@ -110,7 +113,7 @@ class Request(models.Model):
     office_code = models.ForeignKey(Office, on_delete=models.CASCADE)
     account_type = models.CharField(max_length=2, choices=ACCOUNT_TYPE)                                  
     reason = models.CharField(max_length=3,choices=REASON)                                        
-    expiration_date = models.DateField(auto_now =False, auto_now_add=False, default=datetime.now().date() + timedelta(days=1))
+    expiration_date = models.DateField(auto_now =False, auto_now_add=False, default= date.today)
     date_issue = models.DateField(auto_now =False, auto_now_add=True)
     account_usage = models.CharField(max_length=5, choices=ACCOUNT_USAGE)
     estimated_amount_mobilization = models.CharField(max_length=15, choices=ESTIMATED_AMOUNT_MOBILIZATION)                  
