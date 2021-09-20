@@ -1,0 +1,42 @@
+{% extends "Base.html" %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+    <!-- Contenido -->
+    <div class="container" style="background-color: #F5F7FC; height: 550px;">
+        <div id="layoutAuthentication_content">
+            <main>
+                <div class="container">
+                    <div id="layoutAuthentication_content2">
+                        <main>
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-5">
+                                        <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                            <div><h6 class="text-center font-weight-light my-4">Datos del Cliente</h6></div>
+                                            <div class="card-body">
+                                                                                            
+                                                {% if error %}
+                                                    <p class="alert alert-danger">{{ error }}</p>
+                                                {% endif%}
+                                                <form method="post">
+                                                    {% csrf_token %}
+
+                                                    {{ form | crispy }}
+                                                    <div class="d-flex align-items-center justify-content-center mt-4 mb-0">
+                                                        <button type="submit" class="btn btn-primary">Continuar</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+{% endblock content %}

@@ -7,6 +7,18 @@
     <title>Guacamaya Bank</title>
 </head>
 <body>
-    
+    {% for o in test %}
+
+    codigo: {{o.code}}
+    <br>
+    fecha: {{o.expiration_date}}
+
+    {% endfor %}
+    <br>
+
+    {{oficina}}
+    <br>
+
+
 </body>
 </html>

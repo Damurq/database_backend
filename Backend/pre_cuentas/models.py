@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from datetime                          import datetime, timedelta
 
 class Client(models.Model):
     """
@@ -109,7 +110,7 @@ class Request(models.Model):
     office_code = models.ForeignKey(Office, on_delete=models.CASCADE)
     account_type = models.CharField(max_length=2, choices=ACCOUNT_TYPE)                                  
     reason = models.CharField(max_length=3,choices=REASON)                                        
-    expiration_date = models.DateField(auto_now =False, auto_now_add=False)
+    expiration_date = models.DateField(auto_now =False, auto_now_add=False, default=datetime.now().date() + timedelta(days=1))
     date_issue = models.DateField(auto_now =False, auto_now_add=True)
     account_usage = models.CharField(max_length=5, choices=ACCOUNT_USAGE)
     estimated_amount_mobilization = models.CharField(max_length=15, choices=ESTIMATED_AMOUNT_MOBILIZATION)                  
@@ -118,7 +119,7 @@ class Request(models.Model):
     transfer_destiny = models.CharField(max_length=3, choices=COUNTRIES, default="Ven")                 
     state = models.CharField(max_length=1, default='A')                                          # Faltan opciones
     def __str__(self):
-        return self.code
+        return str(self.code)
     class Meta:  
         db_table = 'Request'
 
