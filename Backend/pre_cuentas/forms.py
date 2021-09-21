@@ -25,7 +25,7 @@ class MunicipalityForm(forms.ModelForm):
 				'municipality': 'Municipio',
 		}
 
-class ClientForm(ModelForm):
+class ClientFormVerification(ModelForm):
     """
         Class that generates a verification form to validate the client through his 
         identity document

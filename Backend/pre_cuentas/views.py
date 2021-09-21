@@ -63,7 +63,7 @@ def verification_client(request):
     client = request.user.client
     if request.method == 'POST':
         try:
-            form = ClientForm(request.POST)
+            form = ClientFormVerification(request.POST)
             form.is_valid()
             data = form.cleaned_data
             document_type = data['document_type']
@@ -73,7 +73,7 @@ def verification_client(request):
         except Exception as e:
             return render(request, 'pages/verification_client.html', {'error': 'El documento que ingreso es invalido','form': form,"user":client})
     else:
-        form = ClientForm()
+        form = ClientFormVerification()
     return render(
         request=request,
         template_name='pages/verification_client.html',
